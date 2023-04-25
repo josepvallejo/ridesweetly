@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Previsió del temps per posicionament | TGF - Desenvolupament d'aplicacions interactives">
+    <meta name="keywords" content="forecast, geolocation">
+    <meta name="author" content="Josep Vallejo Duarri">
+    <meta name="aplication-name" content="ride sweetly">
+    <title>ride sweetly</title>
+    <link rel="shortcut icon" href="img/favicon.svg" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+    <script src="js/auth-signin.js" type="module"></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" target="_self"><img id="logo" src="img/logo.svg" alt="ride sweetly logo"></a>
+        <nav>
+            <ul id="menu">
+                <li class="logout-display"><button type="button" data-open="signin-modal">Sign in</button></li>
+                <li class="login-display"><a href="profile.html" target="_self"><button id="session-owner" type="button"></button></a></li>
+                <li class="login-display"><button id="logout-session" type="button">Log out</button></li>
+                <li><button id="about-button" type="button">About us</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Modal per poder iniciar sessió-->
+    <div class="modal" id="signin-modal">
+        <div class="modal-dialog">
+            <header class="modal-header">
+                <h2>Sign in to Ride Sweetly</h2>
+                <button class="close-modal" aria-label="close modal" data-close>✕</button>
+            </header>
+            <section class="modal-content">
+                <form id="signin-form">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="pass" name="password" required>
+                    <button class="button" type="submit">Log in</button>
+                </form>
+            </section>
+            <footer class="modal-footer">
+                <h3>Don't have an account? <a href="signup.html" target="_self">Create account</a></h3>
+            </footer>
+        </div>
+    </div>
+
+    <!--Modal per confirmar l'eliminació d'usuari-->
+    <div class="modal" id="delete-modal">
+        <div class="modal-dialog">
+            <header class="modal-header">
+                <h2>Confirm your account information...</h2>
+                <button class="close-modal" aria-label="close modal" data-close>✕</button>
+            </header>
+            <section class="modal-content">
+                <form id="delete-form">
+                    <label for="email">Email</label>
+                    <input type="email" id="email2" name="email" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="pass2" name="password" required>
+                    <button class="button" type="submit">Delete</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <section id="content">
+        <!--Imatge GIF que només es mostra durant la càrrega de contingut-->
+        <div class="loading">
+            <img src="img/loading.gif" alt="Ride Sweetly Isotype">
+        </div>
+
+        <div id="map">
+            <!--Imatge GIF que només es mostra durant la càrrega de contingut-->
+            <div class="loading2">
+                <img src="img/loading.gif" alt="Ride Sweetly Isotype">
+            </div>
+        </div>
+    
+        <div id="main-buttons">
+            <!--Botó que dispara la crida a l'API de Open Weather Map-->
+            <button id="forecast-button" class="button">Add point</button>
+            <!--Botó que dispara la petició a la base de dades-->
+            <button id="outfit-button" class="button">Get outfit</button>
+        </div>
+
+        <div id="forecast-results">
+            <!--Imatge GIF que només es mostra durant la càrrega de contingut-->
+            <div class="loading">
+                <img src="img/loading.gif" alt="Ride Sweetly Isotype">
+            </div>
+        </div>
+        <div id="reset-points-container">
+            <button id="reset-points-button" class="button">Reset points</button>
+        </div>
+    </section>
+
+    <footer id="footer"></footer>
+
+    <!--Carreguem l'API de Maps JavaScript:-->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRBxqfhgLG9gJEiKpIVfAT5krU2dMg9Yc&callback=setPosition">
+    </script>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+
+    <!--Carreguem el footer a la pàgina-->
+    <script>
+        $(document).ready(function () {
+          $("#footer").load("footer.html");
+        });
+    </script>
+</body>
+</html>

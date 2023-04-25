@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Previsió del temps per posicionament | TGF - Desenvolupament d'aplicacions interactives">
+    <meta name="keywords" content="forecast, geolocation">
+    <meta name="author" content="Josep Vallejo Duarri">
+    <meta name="aplication-name" content="ride sweetly">
+    <title>ride sweetly - profile</title>
+    <link rel="shortcut icon" href="img/favicon.svg" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" target="_self"><img id="logo" src="img/logo.svg" alt="ride sweetly logo"></a>
+    </header>
+
+    <section id="content" class="profile-content">
+        <div id="goback">
+            <a href="index.html" id="go-back-button" target="_self"><button type="button" class="button">Go back</button></a>
+        </div>
+
+        <div id="add-inventory">
+            <h2>Add new piece</h2>
+            <form id="add-piece-form">
+                <label for="type">Type</label>
+                <select name="type" id="select-type" form="add-piece-form" required>
+                    <option value="Jersey">Jersey</option>
+                    <option value="Bib">Bib</option>
+                    <option value="Layer">Layer</option>
+                    <option value="Gloves">Gloves</option>
+                    <option value="Socks">Socks</option>
+                    <option value="Neck">Neck</option>
+                    <option value="Cap">Cap</option>
+                    <option value="Overshoes">Overshoes</option>
+                    <option value="Other">Other</option>
+                </select>
+                <label for="name">Piece name</label>
+                <input type="text" name="name" id="item-name" maxlength="30" required>
+                <label for="mintemp">Minimum temperature</label>
+                <input type="number" name="mintemp" id="item-mintemp" required>
+                <label for="maxtemp">Maximum temperature</label>
+                <input type="number" name="maxtemp" id="item-maxtemp" required>
+                <button class="button" type="submit">Add new piece</button>
+            </form>
+        </div>
+
+        <div id="inventory">
+            <h2>Inventory</h2>
+            <!--Imatge GIF que només es mostra durant la càrrega de contingut-->
+            <div class="loading">
+                <img src="img/loading.gif" alt="Ride Sweetly Isotype">
+            </div>
+        </div>
+
+        <div id="delete-account">
+            <button type="button" id="delete-account-button" class="button">Delete account</button>
+        </div>
+    </section>
+
+    <footer id="footer"></footer>
+
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/profile.js"></script>
+    <!--Carreguem el footer a la pàgina-->
+    <script>
+        $(document).ready(function () {
+            $("#footer").load("footer.html"); // Carreguem el footer
+            getItems();
+        });
+    </script>
+</body>
+</html>

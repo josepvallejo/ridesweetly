@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Previsió del temps per posicionament | TGF - Desenvolupament d'aplicacions interactives">
+    <meta name="keywords" content="forecast, geolocation">
+    <meta name="author" content="Josep Vallejo Duarri">
+    <meta name="aplication-name" content="ride sweetly">
+    <title>ride sweetly - new account</title>
+    <link rel="shortcut icon" href="img/favicon.svg" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/signup.css">
+    <script src="js/auth-signup.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" target="_self"><img id="logo" src="img/logo.svg" alt="ride sweetly logo"></a>
+    </header>
+
+    <section id="content" class="signup-content">
+        <h1>Sign up to Ride Sweetly</h1>
+        <form id="signup-form">
+            <fieldset>
+                <!--Imatge GIF que només es mostra durant la càrrega de contingut-->
+                <div class="loading">
+                    <img src="img/loading.gif" alt="Ride Sweetly Isotype">
+                </div>
+                <legend>Account information</legend>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password</label>
+                <input type="password" id="pass" name="password" required>
+            </fieldset>
+            <button class="button" type="submit">Sign up</button>
+            <a href="index.html" id="cancel-button" target="_self"><button class="button" type="button">Cancel</button></a>
+        </form>
+    </section>
+
+    <footer id="footer"></footer>
+
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <!--Carreguem el footer a la pàgina-->
+    <script>
+        $(document).ready(function () {
+          $("#footer").load("footer.html");
+        });
+    </script>
+</body>
+</html>

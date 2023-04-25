@@ -1,0 +1,98 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+    z-index: 100;
+}
+
+.modal-dialog {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: auto;
+}
+
+.modal-header,
+.modal-footer {
+    position: relative;
+    width: 100%;
+    padding: 10px 35px;
+    background-color: var(--light-color);
+    display: flex;
+    align-items: center;
+}
+
+.modal-header {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.close-modal {
+    font-size: 24px;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#signin-form,
+#delete-form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#signin-form label,
+#delete-form label {
+    position: relative;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#signin-form input,
+#delete-form input {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    padding: 5px 10px;
+    margin-bottom: 25px;
+}
+
+#delete-form button.button {
+    background-color: var(--red-color);
+    color: white;
+}
+
+.modal-footer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,0 +1,175 @@
+body {
+    background-color: var(--main-color);
+}
+
+.profile-content {
+    position: relative;
+    width: 100%;
+}
+
+.profile-content h2 {
+    text-align: center;
+}
+
+#goback {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#goback button {
+    color: white;
+    background-color: var(--orange-color);
+}
+
+#goback a {
+    text-decoration: none;
+}
+
+#goback a button {
+    margin-top: 25px;
+    color: var(--secondary-color);
+    background-color: var(--light-color);
+}
+
+
+#add-inventory {
+    padding: 10px 20px 50px 10px;
+    background-color: var(--light-color);
+}
+
+#add-inventory,
+#inventory {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#inventory {
+    width: 350px;
+    padding: 0 20px;
+}
+
+#add-piece-form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-piece-form label {
+    position: relative;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#add-piece-form input,
+#add-piece-form select {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    padding: 5px 10px;
+    margin-bottom: 25px;
+}
+
+#add-piece-form button {
+    color: white;
+    background-color: var(--secondary-color);
+}
+
+#inventory h2 {
+    color: white;
+}
+
+#inventory ul {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#inventory ul li {
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+}
+
+#inventory ul li.piece-type {
+    width: 75px;
+    background-color: var(--light-color);
+}
+
+#inventory ul li.piece-name {
+    width: 200px;
+    text-align: left;
+    background-color: white;
+}
+
+#inventory ul li.piece-min-temp,
+#inventory ul li.piece-max-temp {
+    width: 25px;
+    border-right: 1px solid var(--secondary-color);
+    background-color: var(--light-color);
+}
+
+#inventory ul li.piece-max-temp {
+    border: none;
+}
+
+#inventory ul li button {
+    margin-left: 10px;
+    padding: 5px;
+    color: white;
+    background-color: var(--red-color);
+}
+
+#delete-account {
+    position: relative;
+    width: 100%;
+    margin-top: 150px;
+    text-align: center;
+    background-color: var(--light-color);
+}
+
+#delete-account button {
+    color: white;
+    background-color: var(--red-color);
+}
+
+
+
+@media (min-width: 576px) {
+
+    #inventory {
+        width: 100%;
+    }
+
+    #inventory ul {
+        margin-top: 5px;
+    }
+}
+
+
+@media (min-width: 768px) {
+
+    #inventory ul li,
+    #inventory ul li button {
+        padding: 10px 20px;
+    }
+}

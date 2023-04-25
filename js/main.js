@@ -170,7 +170,7 @@ const getWeatherInfo = async () => {
                 point.className = "danger";
             }
             // Si encara no hem introduït cap previsió, afegim un element <h2> i el botó per fer reset:
-            if (results.children.length != 0) {
+            if (results.children.length == 1) {
                 results.insertAdjacentHTML("beforeend", "<h2>Added points</h2>");
                 let reset = document.getElementById("reset-points-container");
                 reset.style.display = "inline-block";
